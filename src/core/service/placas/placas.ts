@@ -3,10 +3,10 @@ import { Placas } from "../../entities/placas";
 
 export interface PlacasRepository {
     save(placa: Placas): Promise<void>;
-    findPlaca(placaMercosul: string): Promise<Placas | null>;
+    findPlaca(placaCinza: string): Promise<Placas | null>;
     listRegiao(regiao: string): Promise<Placas[]>;
     searchLastFourDigits(lastFourDigits: string, estado: string): Promise<boolean>;
-    delete(placaMercosul: string): Promise<void>;
+    delete(placaCinza: string): Promise<void>;
 }
 
 export type RepositoryProps = {
@@ -50,14 +50,14 @@ export class PlacasServiceImpl implements PlacaService {
         return output;
     }
 
-    public async deletePlaca(placaMercosul: string): Promise<void> {
-        const aPlaca = await this.props.repository.findPlaca(placaMercosul);
+    public async deletePlaca(placaCinza: string): Promise<void> {
+        const aPlaca = await this.props.repository.findPlaca(placaCinza);
 
         if(! aPlaca) {
-            throw new Error("A placa "+ placaMercosul +" não foi encontrada.");
+            throw new Error("A placa "+ placaCinza +" não foi encontrada.");
         }
         
-        await this.props.repository.delete(placaMercosul);
+        await this.props.repository.delete(placaCinza);
     }
 
     public async listRegiao(regiao: string): Promise<Placas[]> {

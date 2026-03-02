@@ -1,0 +1,52 @@
+###
+POST http://localhost:8000/placas
+Content-Type: application/json
+
+{
+    "placaCinza": "BFA1234"
+}
+
+###
+POST http://localhost:8000/placas
+Content-Type: application/json
+
+{
+    "placaCinza": "BOA1234"
+}
+
+###
+POST http://localhost:8000/placas
+Content-Type: application/json
+
+{
+    "placaCinza": "KPV1234"
+}
+
+###
+POST http://localhost:8000/placas
+Content-Type: application/json
+
+{
+    "placaCinza": "KOV1238"
+}
+
+
+// 2. ATUALIZAR O ESTADO DE UMA PLACA (Transferência)
+// Lembre-se de usar a placa Mercosul gerada no passo anterior na URL
+###
+PUT http://localhost:8000/placas/KOV1238
+Content-Type: application/json
+
+{
+    "newEstado": "SP"
+}
+
+
+// 3. LISTAR PLACAS POR REGIÃO
+###
+GET http://localhost:8000/placas/regiao/Sudeste
+
+
+// 4. DELETAR UMA PLACA
+###
+DELETE http://localhost:8000/placas/KPV1234

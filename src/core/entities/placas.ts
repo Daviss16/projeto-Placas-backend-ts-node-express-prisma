@@ -12,6 +12,7 @@ export type PlacasProps = {
 };
 
 export class Placas {
+    //Readonly<PlacasProps> // essa linha aplicaria readonly a todas os atributos da instancia e não apenas a instancia
     private constructor(readonly props: PlacasProps) {}
 
     public static create(placaInput: string){

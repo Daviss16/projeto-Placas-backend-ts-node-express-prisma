@@ -12,7 +12,7 @@ export type CreatePlacaInputDTO = {
 
 export type UpdateEstadoInputDTO = {
     placaMercosul: string;
-    Novoestado: string;
+    newEstado: string;
 };
 
 export type ListRegiaoInputDTO = {
